@@ -32,7 +32,8 @@ export default function NameList() {
                 {
                     drinks.map((drink, key) => (
                         <div key={drink.strDrink} onClick={()=>showDrinks(key)} className="card">
-                        <h3>{drink.strImageSource}</h3>
+                        <img src={drink.strImageSource}></img>
+                        <h3>{drink.strDrink}</h3>
                         </div>
                     ))
                 }
