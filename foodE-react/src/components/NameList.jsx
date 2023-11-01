@@ -31,9 +31,9 @@ export default function NameList() {
         navigate(`${key}`)
     }
 
-    // const handleSearch = (term) => {
-    //     setSearchTerm(term)
-    // }
+    const handleSearch = (term) => {
+        setSearchTerm(term)
+    }
 
     return (
         <div>
