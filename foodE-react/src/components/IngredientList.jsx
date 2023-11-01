@@ -24,9 +24,9 @@ export default function IngredientList() {
         navigate(`${key}`)
     }
 
-    // if (ingredients.length === 0) {
-    //     return <h2 className="Loading">Loading Please Wait...</h2>
-    // } else {
+    if (ingredients.length === 0) {
+        return <h2 className="Loading">Loading Please Wait...</h2>
+    } else {
         return(
             <div className="ingredients">
 
@@ -40,3 +40,4 @@ export default function IngredientList() {
             </div>
         )
     }
+}
