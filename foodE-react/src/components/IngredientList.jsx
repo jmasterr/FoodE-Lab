@@ -10,7 +10,7 @@ export default function IngredientList() {
 
     useEffect(()=>{
         const getIngredients = async() => {
-            const response = await axios.get(`${BASE_URL}filter.php?i=`)
+            const response = await axios.get(`${BASE_URL}filter.php?i=Gin`)
             setIngredients(response.data.drinks)
             console.log(response)
         }
@@ -25,19 +25,19 @@ export default function IngredientList() {
         navigate(`${key}`)
     }
 
-    if (ingredients.length === 0) {
-        return <h2 className="Loading">Loading Please Wait...</h2>
-    } else {
+    // if (ingredients.length === 0) {
+    //     return <h2 className="Loading">Loading Please Wait...</h2>
+    // } else {
         return(
             <div className="ingredients">
 
                 {
                     ingredients.map((ingredient, key) => (
                         <div key={ingredient.strDrink} onClick={()=>showIngredients(key)} className="card">
-                        <h3>{drink.strDrink}</h3>
+                        <h3>{ingredient.strDrink}</h3>
                         </div>
                     ))
                 }
             </div>
         )
-    }}
+    }
