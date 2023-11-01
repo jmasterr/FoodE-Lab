@@ -5,7 +5,7 @@ export default function SearchBar({onSearch}){
     const [searchTerm, setSearchTerm] =useState('')
 
     const handleChange = (e) => {
-        setSearchTerm(e.target.value)
+        onSearch(searchTerm)
     }
     
     return(

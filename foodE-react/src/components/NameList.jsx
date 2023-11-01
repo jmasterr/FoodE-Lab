@@ -7,14 +7,13 @@ import SearchBar from "./SearchBar"
 
 export default function NameList() {
 
-    // const [searchTerm, setSearchTerm] = useState('')
+    const [searchTerm, setSearchTerm] = useState('') //Why do we need this here and in the search bar?
     const [drinks, setDrinks] = useState([])
     
     useEffect(()=>{
         const getDrinks = async() => {
             const response = await axios.get(`${BASE_URL}search.php?s=`)
             setDrinks(response.data.drinks)
-            console.log(response)
         }
         getDrinks()
     },[searchTerm])
@@ -25,9 +24,9 @@ export default function NameList() {
         navigate(`${key}`)
     }
 
-    // const handleSearch = (term) => {
-    //     setSearchTerm(term)
-    // }
+    const handleSearch = (term) => {
+        setSearchTerm(term)
+    }
 
     if (drinks.length === 0) {
         return <h2 className="Loading">Loading Please Wait...</h2>
@@ -35,7 +34,7 @@ export default function NameList() {
         return(
             <div className="drinks">
                 <SearchBar 
-                // onSearch={handleSearch}
+                onSearch={handleSearch}
                 />
 
                 {
