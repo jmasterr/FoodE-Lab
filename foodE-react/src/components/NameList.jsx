@@ -27,8 +27,8 @@ export default function NameList() {
 
     let navigate = useNavigate()
 
-    const showDrinks = (key) => {
-        navigate(`${key}`)
+    const showDrinkDetails = (idDrink) => {
+        navigate(`/NameList/${idDrink}`)
     }
 
     const handleSearch = (term) => {
@@ -43,8 +43,8 @@ export default function NameList() {
         ) : (
             <div className="drinks">
 
-            {drinks.map((drink, key) => (
-                <div key={drink.strDrink} onClick={() => showDrinks(key)} className="card">
+            {drinks.map((drink) => (
+                <div key={drink.idDrink} onClick={() => showDrinkDetails(drink.idDrink)} className="card">
 
                 <img src={drink.strDrinkThumb} alt={drink.strDrink} className="image-main"/>
 
