@@ -24,9 +24,9 @@ export default function NameList() {
         navigate(`${key}`)
     }
 
-    const handleSearch = (term) => {
-        setSearchTerm(term)
-    }
+    // const handleSearch = (term) => {
+    //     setSearchTerm(term)
+    // }
 
     if (drinks.length === 0) {
         return <h2 className="Loading">Loading Please Wait...</h2>
@@ -34,7 +34,7 @@ export default function NameList() {
         return(
             <div className="drinks">
                 <SearchBar 
-                onSearch={handleSearch}
+                // onSearch={handleSearch}
                 />
 
                 {
