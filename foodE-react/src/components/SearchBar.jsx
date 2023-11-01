@@ -12,6 +12,7 @@ export default function SearchBar({onSearch}) {
         onSearch(searchTerm);
     };
 
+
     return (
         <div className="search-bar">
         <input

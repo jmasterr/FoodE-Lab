@@ -31,9 +31,9 @@ export default function NameList() {
         navigate(`${key}`)
     }
 
-    const handleSearch = (term) => {
-        setSearchTerm(term)
-    }
+    // const handleSearch = (term) => {
+    //     setSearchTerm(term)
+    // }
 
     return (
         <div>
@@ -42,6 +42,7 @@ export default function NameList() {
             <h2 className="Loading">Please Enter a Drink</h2>
         ) : (
             <div className="drinks">
+
             {drinks.map((drink, key) => (
                 <div key={drink.strDrink} onClick={() => showDrinks(key)} className="card">
                 <img src={drink.strImageSource} alt={drink.strDrink} />
