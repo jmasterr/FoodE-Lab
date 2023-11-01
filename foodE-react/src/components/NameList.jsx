@@ -2,12 +2,14 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from '../globals'
+import SearchBar from "./SearchBar"
 
 
 export default function NameList() {
 
+    // const [searchTerm, setSearchTerm] = useState('')
     const [drinks, setDrinks] = useState([])
-
+    
     useEffect(()=>{
         const getDrinks = async() => {
             const response = await axios.get(`${BASE_URL}search.php?s=`)
@@ -15,7 +17,7 @@ export default function NameList() {
             console.log(response)
         }
         getDrinks()
-    },[])
+    },[searchTerm])
 
     let navigate = useNavigate()
 
@@ -23,11 +25,18 @@ export default function NameList() {
         navigate(`${key}`)
     }
 
+    // const handleSearch = (term) => {
+    //     setSearchTerm(term)
+    // }
+
     if (drinks.length === 0) {
         return <h2 className="Loading">Loading Please Wait...</h2>
     } else {
         return(
             <div className="drinks">
+                <SearchBar 
+                // onSearch={handleSearch}
+                />
 
                 {
                     drinks.map((drink, key) => (
