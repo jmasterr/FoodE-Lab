@@ -8,11 +8,12 @@ export default function NamePage() {
     const [drinks, setDrinks] = useState()
 
     let {id} = useParams()
+    console.log(id)
 
     useEffect(() => {
         const getDrinks = async() => {
-            const response = await axios.get(`${BASE_URL}search.php?s=${searchTerm.id}`)
-            setDrinks(response.data.drinks[id])
+            const response = await axios.get(`${BASE_URL}lookup.php?i=${id}`) //this had to change to the address to lookup by id in the API
+            setDrinks(response.data.drinks[0])
         }
         getDrinks()
     }, [])
