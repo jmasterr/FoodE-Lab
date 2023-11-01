@@ -9,26 +9,26 @@ export default function NameList() {
 
     const [searchTerm, setSearchTerm] = useState('') //Why do we need this here and in the search bar?
     const [drinks, setDrinks] = useState([])
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         if (searchTerm) {
             // Fetch data only when searchTerm is not empty
             const getDrinks = async () => {
-              const response = await axios.get(`${BASE_URL}search.php?s=${searchTerm}`)
-              setDrinks(response.data.drinks)
-              console.log(response)
+                const response = await axios.get(`${BASE_URL}search.php?s=${searchTerm}`)
+                setDrinks(response.data.drinks)
+                console.log(response)
             };
             getDrinks()
-          } else {
+        } else {
             // Clear the drinks array when searchTerm is empty
             setDrinks([])
-          }
-        }, [searchTerm])
+        }
+    }, [searchTerm])
 
     let navigate = useNavigate()
 
-    const showDrinks = (key) => {
-        navigate(`${key}`)
+    const showDrinkDetails = (idDrink) => {
+        navigate(`/NameList/${idDrink}`)
     }
 
     const handleSearch = (term) => {
@@ -37,22 +37,22 @@ export default function NameList() {
 
     return (
         <div>
-        <SearchBar onSearch={handleSearch} />
-        {drinks.length === 0 ? (
-            <h2 className="Loading">Please Enter a Drink</h2>
-        ) : (
-            <div className="drinks">
+            <SearchBar onSearch={handleSearch} />
+            {drinks.length === 0 ? (
+                <h2 className="Loading">Please Enter a Drink</h2>
+            ) : (
+                <div className="drinks">
 
-            {drinks.map((drink, key) => (
-                <div key={drink.strDrink} onClick={() => showDrinks(key)} className="card">
+                    {drinks.map((drink) => (
+                        <div key={drink.idDrink} onClick={() => showDrinkDetails(drink.idDrink)} className="card">
 
-                <img src={drink.strDrinkThumb} alt={drink.strDrink} className="image-main"/>
+                            <img src={drink.strDrinkThumb} alt={drink.strDrink} className="image-main" />
 
-                <h3>{drink.strDrink}</h3>
+                            <h3>{drink.strDrink}</h3>
+                        </div>
+                    ))}
                 </div>
-            ))}
-            </div>
-        )}
+            )}
         </div>
-        )
-    }
+    )
+}
