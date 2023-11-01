@@ -27,9 +27,8 @@ export default function NameList() {
 
     let navigate = useNavigate()
 
-    //this changed to use the actual drink ids, as defined in the API, for the slug
-    const showDrinks = (idDrink) => {
-        navigate(`${idDrink}`)
+    const showDrinkDetails = (idDrink) => {
+        navigate(`/NameList/${idDrink}`)
     }
 
     const handleSearch = (term) => {
@@ -45,8 +44,7 @@ export default function NameList() {
             <div className="drinks">
 
             {drinks.map((drink) => (
-                <div key={drink.strDrink} onClick={() => showDrinks(drink.idDrink)} className="card">
-                    {/* drilled for the specific drink id when mapping */}
+                <div key={drink.idDrink} onClick={() => showDrinkDetails(drink.idDrink)} className="card">
 
                 <img src={drink.strDrinkThumb} alt={drink.strDrink} className="image-main"/>
 
