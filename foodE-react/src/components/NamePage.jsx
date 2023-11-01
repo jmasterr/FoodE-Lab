@@ -8,7 +8,6 @@ export default function NamePage() {
     const [drinks, setDrinks] = useState()
 
     let {id} = useParams()
-    console.log(id)
 
     useEffect(() => {
         const getDrinks = async() => {

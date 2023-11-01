@@ -30,7 +30,6 @@ export default function NameList() {
     //this changed to use the actual drink ids, as defined in the API, for the slug
     const showDrinks = (idDrink) => {
         navigate(`${idDrink}`)
-        console.log(idDrink)
     }
 
     const handleSearch = (term) => {
