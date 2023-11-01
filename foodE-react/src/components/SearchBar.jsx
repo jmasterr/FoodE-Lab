@@ -1,25 +1,27 @@
 import React, { useState } from "react"
 
-export default function SearchBar({onSearch}){
+export default function SearchBar({onSearch}) {
 
-    const [searchTerm, setSearchTerm] =useState('')
+    const [searchTerm, setSearchTerm] = useState('');
 
-    const handleChange = (e) => {
-        setSearchTerm(e.target.value)
-        // onSearch(e.target.value)
-        console.log(searchTerm)
-    }
-    
-    return(
-        <div className="searchbar">
-            <input
-            type='text'
-            placeholder='Search drinks...'
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const handleSearch = () => {
+        onSearch(searchTerm);
+    };
+
+
+    return (
+        <div className="search-bar">
+        <input
+            type="text"
+            placeholder="Search drinks..."
             value={searchTerm}
-            onChange={handleChange} //why do we need this????
-            />
-            <button onClick={handleChange} >Search</button>
-
+            onChange={handleChange}
+        />
+        <button onClick={handleSearch}>Search</button>
         </div>
     )
 }

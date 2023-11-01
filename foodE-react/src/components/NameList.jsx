@@ -11,12 +11,19 @@ export default function NameList() {
     const [drinks, setDrinks] = useState([])
     
     useEffect(()=>{
-        const getDrinks = async() => {
-            const response = await axios.get(`${BASE_URL}search.php?s=`)
-            setDrinks(response.data.drinks)
-        }
-        getDrinks()
-    },[searchTerm])
+        if (searchTerm) {
+            // Fetch data only when searchTerm is not empty
+            const getDrinks = async () => {
+              const response = await axios.get(`${BASE_URL}search.php?s=${searchTerm}`)
+              setDrinks(response.data.drinks)
+              console.log(response)
+            };
+            getDrinks()
+          } else {
+            // Clear the drinks array when searchTerm is empty
+            setDrinks([])
+          }
+        }, [searchTerm])
 
     let navigate = useNavigate()
 
@@ -28,23 +35,22 @@ export default function NameList() {
     //     setSearchTerm(term)
     // }
 
-    if (drinks.length === 0) {
-        return <h2 className="Loading">Loading Please Wait...</h2>
-    } else {
-        return(
+    return (
+        <div>
+        <SearchBar onSearch={handleSearch} />
+        {drinks.length === 0 ? (
+            <h2 className="Loading">Please Enter a Drink</h2>
+        ) : (
             <div className="drinks">
-                <SearchBar 
-                // onSearch={handleSearch}
-                />
 
-                {
-                    drinks.map((drink, key) => (
-                        <div key={drink.strDrink} onClick={()=>showDrinks(key)} className="card">
-                        <img src={drink.strImageSource}></img>
-                        <h3>{drink.strDrink}</h3>
-                        </div>
-                    ))
-                }
+            {drinks.map((drink, key) => (
+                <div key={drink.strDrink} onClick={() => showDrinks(key)} className="card">
+                <img src={drink.strImageSource} alt={drink.strDrink} />
+                <h3>{drink.strDrink}</h3>
+                </div>
+            ))}
             </div>
+        )}
+        </div>
         )
-    }}
+    }
