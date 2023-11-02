@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-import { BASE_URL } from '../globals'
+// import { BASE_URL } from '..globals'
 
 export default function IngredientPage() {
 
@@ -11,7 +11,7 @@ export default function IngredientPage() {
     useEffect(() => {
         const getIngredientDetails = async () => {
             try {
-                const response = await axios.get(`${BASE_URL}lookup.php?i=${id}`)
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
                 setIngredient(response.data.drinks[0])
             } catch (error) {
                 console.error("Error fetching ingredient details:", error);
@@ -23,7 +23,7 @@ export default function IngredientPage() {
 
     return ingredient ? (
         <div className="details">
-            <img src={ingredient.strDrinkThumb} alt={ingredient.strDrink} className="image-details" />
+            <img src={ingredient.strIngredientThumb} alt={ingredient.strIngredient} className="image-details" />
             <h3>{ingredient.strIngredient}</h3>
             <ul>
                 <li>{ingredient.strMeasure1} {ingredient.strIngredient1}</li>
@@ -34,10 +34,5 @@ export default function IngredientPage() {
             <Link to="/IngredientList">Return To Ingredient Search</Link>
         </div>
     ) : <h2 className="Finding">Loading Drink...</h2>
-
-
-
-
-
-
+    
 }
