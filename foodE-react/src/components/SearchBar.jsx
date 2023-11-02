@@ -23,7 +23,7 @@ export default function SearchBar({ onSearch }) {
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Search drinks..."
+        placeholder="Search here..."
         value={searchTerm}
         onKeyDown={handleKeyDown}
         onChange={handleChange}

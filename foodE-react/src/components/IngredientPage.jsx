@@ -23,8 +23,8 @@ export default function IngredientPage() {
 
     return ingredient ? (
         <div className="details">
-            <img src={ingredient.strIngredientThumb} alt={ingredient.strIngredient} className="image-details" />
-            <h3>{ingredient.strIngredient}</h3>
+            <img src={ingredient.strDrinkThumb} alt={ingredient.strDrink} className="image-details" />
+            <h3>{ingredient.strDrink}</h3>
             <ul>
                 <li>{ingredient.strMeasure1} {ingredient.strIngredient1}</li>
                 <li>{ingredient.strMeasure2} {ingredient.strIngredient2}</li>
