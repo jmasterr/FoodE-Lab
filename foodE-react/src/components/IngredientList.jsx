@@ -25,7 +25,7 @@ export default function IngredientList() {
 
     let navigate = useNavigate()
 
-    const showIngredients = (idDrink) => {
+    const showIngredientDetails = (idDrink) => {
         navigate(`${idDrink}`)
     }
 
@@ -42,7 +42,7 @@ export default function IngredientList() {
                 <div className="drinks">
 
                     {drinks.map((drink) => (
-                        <div key={drink.idDrink} onClick={() => showDrinkDetails(drink.idDrink)} className="card">
+                        <div key={drink.idDrink} onClick={() => showIngredientDetails(drink.idDrink)} className="card">
 
                             <img src={drink.strDrinkThumb} alt={drink.strDrink} className="image-main" />
 

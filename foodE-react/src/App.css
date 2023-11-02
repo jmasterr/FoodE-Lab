@@ -1,42 +1,169 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('https://img.freepik.com/free-photo/fresh-cocktails-with-ice-lemon-lime-fruits-generative-ai_188544-12370.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  overflow: auto;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: goldenrod;
+  z-index: 100;
+  background-color: RGB(12, 1, 5);
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  padding: 20px 0 20px 0;
+  line-height: 60px;
+}
+
+.Navbar {
+  position: fixed;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: .5rem 1rem;
+  z-index: 100;
+  background-color: goldenrod;
+}
+
+.Navbar a {
+  width: 180px;
   text-align: center;
+
+  color: rgb(12, 1, 5);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.search-bar {
+  padding-top: 80px;
+  backdrop-filter: blur(10px);
+
+  position: fixed;
+  top: 80px;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Main {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.drinks {
+  margin-top: 150px;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly
+}
+
+.Loading {
+  margin-top: 35vh;
+  width: 40vw;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(13px);
+}
+
+h3 {
+  padding: 12px 0 4px 0;
+}
+
+input {
+  margin: 10px 0 20px 0;
+  padding: 2px 0 2px 0;
+}
+
+button {
+  margin-top: 9px;
+  height: 25px;
+}
+
+.details a {
+  padding-top: 15px;
+  color: goldenrod;
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  width: 350px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgb(26, 26, 26);
+  margin: 20px;
+  color: goldenrod;
 }
 
-.read-the-docs {
-  color: #888;
+.details a:hover {
+  color: goldenrod;
+  cursor: pointer;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  width: 500px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgb(26, 26, 26);
+  margin-top: 100px;
+  color: goldenrod;
+}
+
+.details li {
+  align-content: left;
+}
+
+.details img,
+.card img {
+  width: 300px;
+  height: fit-content;
 }
