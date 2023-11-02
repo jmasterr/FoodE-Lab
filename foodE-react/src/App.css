@@ -176,3 +176,26 @@ button {
   width: 300px;
   height: fit-content;
 }
+
+.error{
+  margin-top: 35vh;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(13px);
+}
+
+.backbutton{
+  height: 2rem;
+  padding: 8px;
+  border: none;
+  background: goldenrod;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.backbutton:hover {
+  background: #EE4E18;
+}
