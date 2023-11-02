@@ -54,6 +54,7 @@ h1 {
   padding: .5rem 1rem;
   z-index: 100;
   background-color: goldenrod;
+ 
 }
 
 .Navbar a {
@@ -64,6 +65,14 @@ h1 {
   text-decoration: none;
   font-weight: 800;
   font-size: 18px;
+
+  transition: .3s;
+}
+
+.Navbar a:hover {
+  text-shadow: 0 0 7px white;
+  transform: scale(1.1);
+  transition: .3s;
 }
 
 .search-bar {
