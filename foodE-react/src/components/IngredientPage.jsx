@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-import { BASE_URL } from '..globals'
+import { BASE_URL } from '../globals'
 
 export default function IngredientPage() {
 
@@ -23,7 +23,7 @@ export default function IngredientPage() {
 
     return ingredient ? (
         <div className="details">
-            <img src={ingredient.strIngredientThumb} alt={ingredient.strIngredient} className="image-details" />
+            <img src={ingredient.strDrinkThumb} alt={ingredient.strDrink} className="image-details" />
             <h3>{ingredient.strIngredient}</h3>
             <ul>
                 <li>{ingredient.strMeasure1} {ingredient.strIngredient1}</li>
