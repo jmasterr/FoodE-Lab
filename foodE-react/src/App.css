@@ -5,7 +5,8 @@
   scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -23,17 +24,26 @@ body, html {
   top: 0;
   left: 0;
   right: 0;
+  height: 100px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   color: goldenrod;
-  z-index: 100; 
-  background-color: black;
+  z-index: 100;
+  background-color: RGB(12, 1, 5);
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  padding: 20px 0 20px 0;
+  line-height: 60px;
 }
 
 .Navbar {
   position: fixed;
-  margin-top: 30px;
+  margin-top: 100px;
   top: 0;
   left: 0;
   right: 0;
@@ -41,29 +51,108 @@ body, html {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem 1.5rem;
-  color: goldenrod;
+  padding: .5rem 1rem;
   z-index: 100;
-  background-color: black;
+  background-color: goldenrod;
+ 
 }
 
-.details a {
-  color: goldenrod;
+.Navbar a {
+  width: 180px;
+  text-align: center;
+
+  color: rgb(12, 1, 5);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+
+  transition: .3s;
 }
 
-.details a:hover {
-  color: goldenrod;
+.Navbar a:hover {
+  text-shadow: 0 0 7px white;
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.search-bar {
+  position: fixed;
+  top: 160px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid goldenrod;
+  border-top: 1px solid goldenrod;
+  padding: 10px 0;
+}
+
+.search-bar input {
+  width: 50%; 
+  padding: 8px;
+  margin-right: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: transparent; 
+  font-size: 20px;
+  color: azure;
+}
+
+.search-bar button {
+  width: 20%;
+  padding: 8px;
+  border: none;
+  background: goldenrod;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.Main {
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  
+.search-bar button:hover {
+  background: #EE4E18;
 }
 
-.details,
+.search-bar input::placeholder {
+  color: rgb(198, 209, 215);
+}
+
+.Main {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drinks {
+  margin-top: 150px;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly
+}
+
+.Loading {
+  margin-top: 35vh;
+  width: 40vw;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(13px);
+}
+
+h3 {
+  padding: 12px 0 4px 0;
+}
+
+.details a {
+  padding-top: 15px;
+  color: goldenrod;
+}
+
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +166,27 @@ body, html {
   border-radius: 15px;
   box-shadow: 10px 10px 5px rgb(26, 26, 26);
   margin: 20px;
+  color: goldenrod;
+}
+
+.details a:hover {
+  color: goldenrod;
+  cursor: pointer;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  width: 500px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgb(26, 26, 26);
+  margin-top: 100px;
   color: goldenrod;
 }
 
