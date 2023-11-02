@@ -13,7 +13,7 @@ export default function NamePage() {
             try {
                 const response = await axios.get(`${BASE_URL}lookup.php?i=${id}`)
                 // Use [0] because it returns an array
-                setDrink(response.data.drinks[0]) 
+                setDrink(response.data.drinks[0])
             } catch (error) {
                 console.error("Error fetching drink details:", error);
                 setDrink(null)
