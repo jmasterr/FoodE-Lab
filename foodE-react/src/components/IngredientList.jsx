@@ -37,7 +37,7 @@ export default function IngredientList() {
         <div>
             <SearchBar onSearch={handleSearch} />
             {drinks.length === 0 ? (
-                <h2 className='Loading'>Please Enter an Ingredient to Search by</h2>
+                <h2 className='Loading'>Please Enter an Ingredient</h2>
             ) : (
                 <div className="drinks">
 
