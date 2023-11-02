@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -159,14 +160,14 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: whitesmoke;
+  backdrop-filter: blur(12px);
   width: 350px;
   padding: 20px;
-  border: 2px solid black;
+  border: 1px solid goldenrod;
   border-radius: 15px;
-  box-shadow: 10px 10px 5px rgb(26, 26, 26);
+  box-shadow: 10px 10px 5px rgba(26, 26, 26, .8);
   margin: 20px;
-  color: goldenrod;
+  color: whitesmoke;
 }
 
 .details a:hover {
@@ -180,14 +181,14 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: whitesmoke;
-  width: 500px;
+  backdrop-filter: blur(12px);
+  width: 400px;
   padding: 20px;
-  border: 2px solid black;
+  border: 1px solid goldenrod;
   border-radius: 15px;
-  box-shadow: 10px 10px 5px rgb(26, 26, 26);
+  box-shadow: 10px 10px 5px rgba(26, 26, 26, .8);
   margin-top: 100px;
-  color: goldenrod;
+  color: whitesmoke;
 }
 
 .details li {
@@ -198,4 +199,27 @@ h3 {
 .card img {
   width: 300px;
   height: fit-content;
+}
+
+.error{
+  margin-top: 35vh;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(13px);
+}
+
+.backbutton{
+  height: 2rem;
+  padding: 8px;
+  border: none;
+  background: goldenrod;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.backbutton:hover {
+  background: #EE4E18;
 }
